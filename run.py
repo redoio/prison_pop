@@ -25,7 +25,7 @@ current_commits = pd.read_excel(config.base_path+"/data/input/CurrentCommitments
 prior_commits = pd.read_excel(config.base_path+"/data/input/PriorCommitments_CDCR.xlsx")
 
 # Randomly select individuals to evaluate (as opposed to evaluating the entire population)
-sample_ids = list(demographics[config.id_label].sample(n=50000, random_state=1))
+sample_ids = list(demographics[config.id_label].sample(n=config.eval_count, random_state=1))
 # Extract the sampled CDCR IDs
 sample_demographics = demographics[demographics[config.id_label].isin(sample_ids)]
 sample_current_commits = current_commits[current_commits[config.id_label].isin(sample_ids)]
