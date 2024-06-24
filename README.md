@@ -13,5 +13,11 @@ Note: This cohort simply meets the sample eligibility crtiera. There is no certa
 
 The selection process does not account for age-related criteria since the department denied sharing individual birthdays. Age is a pertinent factor, however, in PIR eligibility in some counties. The Los Angeles County District Attorney's Office, for example, reviews adult cases if the individual is over the age of 50 differently from juvenile cases if the offense was committed at age 14 or 15 (https://github.com/redoio/resentencing_data_initiative/eligibility_model/code/offense_classification/county/los_angeles)
 
+# Citation 
+
+If you make use of our dataset(s), please cite our work as follows: 
+
+"Redo.io. cdcr-prison-pop (Version 1.0.0) [Dataset]. https://github.com/redoio/prison_pop"
+
 # Contact 
 Contact aparna.komarla@gmail.com for any questions
