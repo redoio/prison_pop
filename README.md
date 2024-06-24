@@ -1,5 +1,9 @@
 # Introduction
-Data on the population currently incarcerated in the California Department of Corrections and Rehabilitation (CDCR) as of December 2023 and those who may be eligible for resentencing under Prosecutor Initiated Resentencing (PIR) programs. The population data was acquired via the California Public Records Act (CPRA). As a result, several privacy (health information, age, etc.) related exclusionary criteria have been applied. Some CDCR identification numbers are hashed for de-identification throughout the dataset(s). 
+Data on the population currently incarcerated in the California Department of Corrections and Rehabilitation (CDCR) as of December 2023. This data was acquired via the California Public Records Act (CPRA). As a result, several privacy (health information, age, etc.) related exclusionary criteria have been applied. 
+
+Using a sample population, and a set of eligibility criteria, we indicate who may be eligible for resentencing under Prosecutor Initiated Resentencing (PIR) programs. 
+
+Some CDCR identification numbers are hashed for de-identification throughout the dataset(s). 
 
 # Sample
 We demonstrate a full execution of the resentencing eligibility model (https://github.com/redoio/resentencing_data_initiative/) on the CDCR population data. We establish a set of eligibility rules, classify offenses based on their nature and severity, and then create a scenario in which we identify the best candidates for resentencing.
