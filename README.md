@@ -19,5 +19,11 @@ If you make use of our dataset(s), please cite our work as follows:
 
 "Redo.io. cdcr-prison-pop (Version 1.0.0) [Dataset]. https://github.com/redoio/prison_pop"
 
+# License 
+All content in this repository is licensed under GNU AGPLv3
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+You must give appropriate credit to our work. You may not use our work for commercial purposes, which means anything primarily intended for or directed toward commercial advantage or monetary compensation.
+
 # Contact 
 Contact aparna.komarla@gmail.com for any questions
