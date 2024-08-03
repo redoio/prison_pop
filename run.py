@@ -20,10 +20,12 @@ import copy
 import os
 
 # Extract relevant datasets
+print("Extracting demographics, current commits and prior commits datasets")
 demographics = pd.read_excel(config.base_path+"/data/input/Demographics_CDCR.xlsx")
 current_commits = pd.read_excel(config.base_path+"/data/input/CurrentCommitments_CDCR.xlsx")
 prior_commits = pd.read_excel(config.base_path+"/data/input/PriorCommitments_CDCR.xlsx")
 
+print("Extracting a sample population for eligibility evaluation")
 # Randomly select individuals to evaluate (as opposed to evaluating the entire population)
 sample_ids = list(demographics[config.id_label].sample(n=config.eval_count, random_state=1))
 # Extract the sampled CDCR IDs
@@ -34,14 +36,15 @@ sample_prior_commits = prior_commits[prior_commits[config.id_label].isin(sample_
 # Extract offense classifications
 sorting_criteria = pd.read_excel(config.base_path+"/offense_classification/selection_criteria.xlsx")
 
-
-errors, adult_el_cdcr_nums = eligibility.gen_eligibility(demographics = sample_demographics, 
-                                                         sorting_criteria = sorting_criteria,
-                                                         current_commits = sample_current_commits, 
-                                                         prior_commits = sample_prior_commits, 
-                                                         write_path = config.base_path+"/data/output",
-                                                         eligibility_conditions = general.el_cond,
-                                                         pop_label = general.el_cond['population'],
-                                                         id_label = config.id_label, 
-                                                         comp_int = rules.comp_int,
-                                                         to_excel = True)
+if __name__ == "__main__":
+    errors, adult_el_cdcr_nums = eligibility.gen_eligibility(demographics = sample_demographics, 
+                                                             sorting_criteria = sorting_criteria,
+                                                             current_commits = sample_current_commits, 
+                                                             prior_commits = sample_prior_commits, 
+                                                             write_path = config.base_path+"/data/output",
+                                                             eligibility_conditions = general.el_cond,
+                                                             pop_label = general.el_cond['population'],
+                                                             id_label = config.id_label, 
+                                                             comp_int = rules.comp_int,
+                                                             to_excel = config.to_excel, 
+                                                             parallel = config.parallel)
