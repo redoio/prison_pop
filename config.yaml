@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+
+id_label: "CDCNo"
+base_path: "https://raw.githubusercontent.com/redoio/offenses_data/blob/main/data/"
+eval_count: 50000
+parallel: True
+to_excel: True
