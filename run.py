@@ -26,28 +26,32 @@ with open('config.yaml', 'r') as file:
 
 # Extract relevant datasets
 print(f"Extracting demographics, current commits and prior commits datasets from {config['base_path']}")
-demographics = pd.read_excel(config['base_path']+"Demographics_CDCR.xlsx", engine='openpyxl')
-current_commits = pd.read_excel(config['base_path']+"CurrentCommitments_CDCR.xlsx", engine='openpyxl')
-prior_commits = pd.read_excel(config['base_path']+"PriorCommitments_CDCR.xlsx", engine='openpyxl')
+demographics = pd.read_excel(config['base_path']+config['dem_file_name'], engine='openpyxl')
+current_commits = pd.read_excel(config['base_path']+config['curr_commits_file_name'], engine='openpyxl')
+prior_commits = pd.read_excel(config['base_path']+config['prior_commits_file_name'], engine='openpyxl')
 
-print(f"Extracting a sample population of size {config['eval_count']} for eligibility evaluation")
-# Randomly select individuals to evaluate (as opposed to evaluating the entire population)
-sample_ids = list(demographics[config['id_label']].sample(n=config['eval_count'], random_state=1))
-# Extract the sampled CDCR IDs
-sample_demographics = demographics[demographics[config['id_label']].isin(sample_ids)]
-sample_current_commits = current_commits[current_commits[config['id_label']].isin(sample_ids)]
-sample_prior_commits = prior_commits[prior_commits[config['id_label']].isin(sample_ids)]
+if config['eval_count']:
+    print(f"Extracting a sample population of size {config['eval_count']} for eligibility evaluation")
+    # Randomly select individuals to evaluate (as opposed to evaluating the entire population)
+    sample_ids = list(demographics[config['id_label']].sample(n=config['eval_count'], random_state=1))
+    # Extract the sampled CDCR IDs
+    demographics = demographics[demographics[config['id_label']].isin(sample_ids)]
+    current_commits = current_commits[current_commits[config['id_label']].isin(sample_ids)]
+    prior_commits = prior_commits[prior_commits[config['id_label']].isin(sample_ids)]
 
 # Extract offense classifications
-sorting_criteria = pd.read_excel("offense_classification/selection_criteria.xlsx")
+sorting_criteria = pd.read_excel(os.path.join(os.getcwd(), "offense_classification", "selection_criteria.xlsx"))
 
-
-errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = sample_demographics,
+# Evaluate the entire population or a sample
+errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = demographics,
                                                          sorting_criteria = sorting_criteria,
-                                                         current_commits = sample_current_commits,
-                                                         prior_commits = sample_prior_commits,
-                                                         write_path = "/data/output",
+                                                         current_commits = current_commits,
+                                                         prior_commits = prior_commits,
+                                                         write_path = os.path.join(os.getcwd(), "data", "output"),
                                                          eligibility_conditions = general.el_cond,
+                                                         read_path = config['base_path'],
+                                                         month = config['input_timestamp'],
+                                                         county_name = 'all; entire CDCR population',
                                                          pop_label = general.el_cond['population'],
                                                          id_label = config['id_label'],
                                                          comp_int = rules.comp_int,

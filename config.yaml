@@ -2,6 +2,10 @@
 
 id_label: "CDCNo"
 base_path: "https://raw.githubusercontent.com/redoio/offenses_data/main/data/"
-eval_count: 50000
+dem_file_name: "Demographics_CDCR.xlsx"
+curr_commits_file_name: "CurrentCommitments_CDCR.xlsx"
+prior_commits_file_name: "PriorCommitments_CDCR.xlsx"
+input_time_stamp: 12_2023
+eval_count: None
 parallel: True
 to_excel: True

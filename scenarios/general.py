@@ -3,7 +3,6 @@
 from scenarios import rules
 from scenarios import utils
 
-# Adult eligibility
 el_cond =  {'population': 'general',
             'lenience': 'low',
             'offense type': 'all',
