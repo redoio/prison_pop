@@ -18,6 +18,7 @@ import utils
 import extract 
 import eligibility
 import summary
+import cohort
 
 
 with open('config.yaml', 'r') as file:
@@ -38,10 +39,10 @@ sample_current_commits = current_commits[current_commits[config['id_label']].isi
 sample_prior_commits = prior_commits[prior_commits[config['id_label']].isin(sample_ids)]
 
 # Extract offense classifications
-sorting_criteria = pd.read_excel(config['base_path']+"/offense_classification/selection_criteria.xlsx")
+sorting_criteria = pd.read_excel("offense_classification/selection_criteria.xlsx")
 
 
-errors, adult_el_cdcr_nums = eligibility.gen_eligibility(demographics = sample_demographics,
+errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = sample_demographics,
                                                          sorting_criteria = sorting_criteria,
                                                          current_commits = sample_current_commits,
                                                          prior_commits = sample_prior_commits,
