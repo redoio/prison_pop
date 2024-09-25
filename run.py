@@ -39,12 +39,9 @@ if config['eval_count']:
     current_commits = current_commits[current_commits[config['id_label']].isin(sample_ids)]
     prior_commits = prior_commits[prior_commits[config['id_label']].isin(sample_ids)]
 
-# Extract offense classifications
-sorting_criteria = pd.read_excel(os.path.join(os.getcwd(), "offense_classification", "selection_criteria.xlsx"))
-
 # Evaluate the entire population or a sample
 errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = demographics,
-                                                         sorting_criteria = sorting_criteria,
+                                                         sorting_criteria = pd.read_excel(config['criteria_path'], engine='openpyxl'),
                                                          current_commits = current_commits,
                                                          prior_commits = prior_commits,
                                                          write_path = os.path.join(os.getcwd(), "data", "output"),
@@ -56,4 +53,4 @@ errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = demograph
                                                          id_label = config['id_label'],
                                                          comp_int = rules.comp_int,
                                                          to_excel = config['to_excel'],
-                                                         parallel = config['parallel'])
+                                                         parallel = False)

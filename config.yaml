@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-
 id_label: "CDCNo"
+criteria_path: "https://raw.githubusercontent.com/redoio/resentencing_data_initiative/main/eligibility_model/code/offense_classification/county/los_angeles/selection_criteria.xlsx"
 base_path: "https://raw.githubusercontent.com/redoio/offenses_data/main/data/"
 dem_file_name: "Demographics_CDCR.xlsx"
 curr_commits_file_name: "CurrentCommitments_CDCR.xlsx"
 prior_commits_file_name: "PriorCommitments_CDCR.xlsx"
-input_time_stamp: 12_2023
-eval_count: None
+input_timestamp: 12_2023
+eval_count: null
 parallel: True
 to_excel: True
