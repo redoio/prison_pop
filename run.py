@@ -53,4 +53,4 @@ errors, adult_el_cdcr_nums = cohort.gen_eligible_cohort(demographics = demograph
                                                          id_label = config['id_label'],
                                                          comp_int = rules.comp_int,
                                                          to_excel = config['to_excel'],
-                                                         parallel = False)
+                                                         parallel = config['parallel'])
