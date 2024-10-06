@@ -6,5 +6,5 @@ curr_commits_file_name: "CurrentCommitments_CDCR.xlsx"
 prior_commits_file_name: "PriorCommitments_CDCR.xlsx"
 input_timestamp: 12_2023
 eval_count: null
-parallel: True
+parallel: False
 to_excel: True
