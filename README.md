@@ -1,10 +1,10 @@
-# Introduction
+# Data
 Data on the population currently incarcerated in the California Department of Corrections and Rehabilitation (CDCR) as of December 2023 acquired via the California Public Records Act (CPRA). CDCR applied several privacy (health information, age, etc.) related exclusionary criteria to release the data. Some CDCR identification numbers are hashed for de-identification as a result. 
 
 Note: Data and analyses in this repository are fully independent of the Three Strikes Project, Stanford University and the Resentencing Data Initiative. This is an exploratory effort not supported or related to any of the aforementioned parties.
 
 # Demo
-We demonstrate a full execution of the resentencing eligibility model (https://github.com/redoio/resentencing_data_initiative/) on the CDCR population data. We establish a set of eligibility rules, classify offenses based on their nature and severity, and then create a scenario in which we identify the best candidates for resentencing.
+We demonstrate a full execution of the resentencing eligibility model (https://github.com/redoio/resentencing_data_initiative/) on the CDCR population data described above. We establish a set of eligibility rules, classify offenses based on their nature and severity, and then create a scenario in which we identify the best candidates for resentencing.
 
 ## Output
 This cohort simply meets the sample eligibility criteria. There is no certainty that these individuals are falsely incarcerated or harshly sentenced. Such determinations require complex case reviews by attorneys. 
