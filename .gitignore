@@ -1,0 +1,2 @@
+# Ignoring cohort data that is raw (using original CDCR data - unhashed)
+/data/output/raw
