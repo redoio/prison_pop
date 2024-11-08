@@ -1,6 +1,6 @@
 id_label: "CDCNo"
 criteria_path: "https://raw.githubusercontent.com/redoio/resentencing_data_initiative/main/eligibility_model/code/offense_classification/county/los_angeles/selection_criteria.xlsx"
-base_path: "https://raw.githubusercontent.com/redoio/offenses_data/main/data/"
+base_path: "C:/Users/aparn/offenses_data/raw/"
 dem_file_name: "Demographics_CDCR.xlsx"
 curr_commits_file_name: "CurrentCommitments_CDCR.xlsx"
 prior_commits_file_name: "PriorCommitments_CDCR.xlsx"

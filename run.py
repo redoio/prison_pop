@@ -12,7 +12,7 @@ import os
 import importlib
 
 # Eligibility model
-sys.path.insert(0, "C:/Users/apkom/resentencing_data_initiative/eligibility_model/code")
+sys.path.insert(0, "C:/Users/aparn/resentencing_data_initiative/eligibility_model/code")
 import helpers
 import utils
 import extract 
