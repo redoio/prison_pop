@@ -12,7 +12,11 @@ import os
 import importlib
 
 # Eligibility model
-sys.path.insert(0, "C:/Users/aparn/resentencing_data_initiative/eligibility_model/code")
+
+## UPDATE WITH LOCAL RDI REPO
+#sys.path.insert(0, "C:/Users/aparn/resentencing_data_initiative/eligibility_model/code")
+sys.path.insert(0, "")
+
 import helpers
 import utils
 import extract 
